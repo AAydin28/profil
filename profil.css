@@ -2,105 +2,88 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    align-items: center;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
-/* Navbar */
+/*navbar*/
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #026937;
+    background-color: #026937;
     padding: 15px 20px;
-    color: white;
-    flex-wrap: wrap;
 }
 
-/* Logo */
-.navbar .logo {
-    font-size: 24px;
+.logo {
+    font-size: 22px;
+    color: white;
     font-weight: bold;
 }
 
-/* Menü Linkleri */
-.navbar .nav-links {
-    list-style: none;
-    padding: 0;
+
+.search-box {
+    width: 175px; 
+    padding: 9px; 
+    font-size: 14px; 
+    border: 2px solid #026937; 
+    border-radius: 25px; 
+    display: block;
+}
+
+.search-box::placeholder {
+    color: #888; 
+    font-style: italic;
+}
+
+
+.nav-links {
     display: flex;
+    list-style: none;
+    gap: 15px;
 }
 
-.navbar .nav-links li {
-    margin: 0 20px;
-}
-
-.navbar .nav-links a {
+.nav-links li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 40px;
 }
 
- .navbar .nav-links a:hover {
-    text-decoration: underline;
-} 
-
-/* Menü Toggle Butonu */
+/* Menü Butonu */
 .menu-toggle {
-    background-color: transparent; 
-    border: none; 
-    font-size: 30px;
-    color: white; 
-    cursor: pointer; 
-    padding: 10px; 
-    display: none; 
-    justify-content: center; 
-    align-items: center; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease; 
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
 }
 
-/* Hover efekti */
-.menu-toggle:hover {
-    background-color: #f0f0f0; 
-    color: #026937;
-}
-
-.menu-toggle:focus {
-    outline: none;
-}
-
-/* RESPONSIVE TASARIM */
+/* Küçük Ekranlar İçin */
 @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-toggle {
-        display: flex; /* Mobilde butonu göster */
-        width: 100%;
-        text-align: center;
-    }
-
     .nav-links {
-        display: none; /* Menü varsayılan olarak gizli */
+        display: none; /* Küçük ekranda başlangıçta gizli */
         flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
+        background-color: #026937;
         text-align: center;
-        background: #026937;
         padding: 10px 0;
     }
 
-    .nav-links li {
-        margin: 10px 0;
+    .nav-links.active {
+        display: flex; /* Butona basınca açılacak */
     }
 
-    .nav-links.active {
-        display: flex; /* Butona tıklanınca menüyü aç */
+    .menu-toggle {
+        display: block; /* Küçük ekranda butonu göster */
     }
 }
-
 
 /* Profil Kartı */
 .profile-card {
@@ -285,3 +268,6 @@ body {
   .buy-btn:hover {
     background-color: #4CAF50; /* Hover (fareyle üzerine gelindiğinde) arka plan rengi */
   }
+
+
+  
